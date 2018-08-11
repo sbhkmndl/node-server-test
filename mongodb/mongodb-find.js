@@ -11,12 +11,16 @@ MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true}, (err, 
   //   console.log('Unable to fetch data from database');
   // });
 
-  db.db('TodoApp').collection('Todoso').find().count().then((count)=>{
-    console.log(count);
-  }, (err)=>{
-    console.log('Unable to fetch data from database');
-  });
+  // db.db('TodoApp').collection('Todoso').find().count().then((count)=>{
+  //   console.log(count);
+  // }, (err)=>{
+  //   console.log('Unable to fetch data from database');
+  // });
 
+//Delete Many records
+db.db('TodoApp').collection('Todoso').deleteMany({firstName: 'Soubhik'}).then((result)=>{
+  console.log(result);
+});
 
 db.close();
 });
